@@ -1,0 +1,235 @@
+/* Estilo padrão para todos os elementos */
+* {
+    box-sizing: border-box; /* Inclui padding e borda no cálculo das dimensões */
+    margin: 0;              /* Remove margens padrão */
+    padding: 0;             /* Remove padding padrão */
+}
+
+/* Estilos do body da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    background-color: #f4f4f4;      /* Cor de fundo */
+    padding: 20px;                  /* Padding ao redor do conteúdo */
+    display: flex;                  /* Alinha o conteúdo do body */
+    justify-content: center;        /* Centraliza o conteúdo horizontalmente */
+    align-items: center;            /* Centraliza o conteúdo verticalmente */
+    min-height: 100vh;              /* Altura mínima ocupa a tela inteira */
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+    background-color: #1E1E1E; /* Cor de fundo para o modo escuro */
+}
+
+body.dark-mode .container,
+body.dark-mode .list-container,
+body.dark-mode .modal-content {
+    background-color: #2a2a2a; /* Cor de fundo para elementos no modo escuro */
+    color: #ffffff; /* Cor do texto */
+}
+
+body.dark-mode .txt {
+    color: #ffffff; /* Cor específica para o texto no modo escuro */
+}
+
+body.dark-mode #taskInput,
+body.dark-mode #taskObservation,
+body.dark-mode #toggle-mode {
+    border: none;
+    outline: none;
+    background-color: #a8a2a2; /* Cor de fundo para campos no modo escuro */
+}
+
+/* Estilos do contêiner principal */
+.container {
+    max-width: 800px;                           /* Largura máxima do contêiner */
+    width: 100%;                                /* Largura do contêiner */
+    background: #fff;                          /* Cor de fundo do contêiner */
+    padding: 20px;                              /* Padding dentro do contêiner */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Sombra ao contêiner */
+    border-radius: 8px;                         /* Cantos arredondados */
+    text-align: center;                         /* Centraliza o texto */
+}
+
+/* Estilo do título principal */
+h1 {
+    text-align: center;  /* Centraliza o título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+/* Estilo da seção para adicionar novas tarefas */
+.add-task-section {
+    display: flex;          /* Exibe elementos em coluna */
+    flex-direction: column; /* Alinha elementos verticalmente */
+    gap: 10px;              /* Espaço entre os elementos */
+    margin-bottom: 20px;    /* Espaço abaixo da seção */
+    align-items: center;    /* Centraliza os elementos */
+}
+
+/* Estilo dos campos de entrada */
+#taskInput,
+#taskObservation {
+    width: 100%;              /* Largura total dos campos */
+    max-width: 400px;         /* Largura máxima dos campos */
+    padding: 10px;            /* Padding dentro dos campos */
+    border: 1px solid #ddd;   /* Borda dos campos */
+    border-radius: 4px;       /* Cantos arredondados */
+    text-align: center;       /* Centraliza texto nos campos */
+}
+
+/* Estilo do botão de adicionar tarefa */
+#addTaskButton {
+    padding: 10px 20px;          /* Padding ao botão */
+    border: none;                /* Remove borda padrão */
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: white;              /* Cor do texto */
+    border-radius: 4px;          /* Cantos arredondados */
+    cursor: pointer;             /* Muda o cursor ao passar sobre o botão */
+}
+
+/* Estilo do botão ao passar o mouse */
+#addTaskButton:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+/* Estilo da seção que contém as listas de tarefas */
+.lists-section {
+    display: flex;                  /* Exibe contêineres das listas lado a lado */
+    justify-content: space-between; /* Espaçamento entre contêineres */
+}
+
+/* Estilo dos contêineres das listas */
+.list-container {
+    width: 48%;               /* Largura dos contêineres */
+    background-color: #fff; /* Cor de fundo */
+    border: 1px solid #ddd; /* Borda dos contêineres */
+    border-radius: 4px;       /* Cantos arredondados */
+    padding: 10px;            /* Padding dentro dos contêineres */
+}
+
+/* Estilo dos subtítulos das listas */
+h2 {
+    margin-top: 0; /* Remove margem superior */
+    color: #333; /* Cor do texto */
+}
+
+/* Estilo das listas */
+ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0;            /* Remove padding */
+    margin: 0;             /* Remove margens */
+}
+
+/* Estilo dos itens das listas */
+li {
+    padding: 10px;                   /* Padding dentro dos itens */
+    border-bottom: 1px solid #eee; /* Borda inferior */
+    display: flex;                   /* Exibe botões lado a lado com o texto */
+    justify-content: space-between;  /* Espaçamento entre elementos */
+    align-items: center;             /* Alinha verticalmente os elementos */
+}
+
+/* Estilo dos botões de ação nas listas */
+.delete {
+    color: #dc3545; /* Cor do botão de deletar */
+    cursor: pointer;  /* Muda o cursor ao passar sobre o botão */
+}
+
+.complete {
+    color: #28a745;   /* Cor do botão de completar */
+    cursor: pointer;    /* Muda o cursor ao passar sobre o botão */
+    margin-right: 10px; /* Espaço à direita do botão */
+}
+
+.view {
+    color: #007bff;   /* Cor do botão de visualizar detalhes */
+    cursor: pointer;    /* Muda o cursor ao passar sobre o botão */
+    margin-right: 10px; /* Espaço à direita do botão */
+}
+
+/* Estilo centralizado para os elementos */
+.center {
+    display: flex;          /* Exibe elementos em coluna */
+    flex-direction: column; /* Alinha elementos verticalmente */
+    align-items: center;    /* Centraliza os elementos */
+    text-align: center;     /* Centraliza o texto */
+}
+
+/* Estilos do modal */
+.modal {
+    display: none;                       /* Inicialmente, o modal está oculto */
+    position: fixed;                     /* Modal fixo na tela */
+    z-index: 1;                          /* Ordem de sobreposição */
+    left: 0;                             /* Posição esquerda */
+    top: 0;                              /* Posição superior */
+    width: 100%;                         /* Largura total */
+    height: 100%;                        /* Altura total */
+    overflow: auto;                      /* Barra de rolagem se necessário */
+    background-color: rgb(0,0,0);      /* Cor de fundo (preto) */
+    background-color: rgba(0,0,0,0.4); /* Cor de fundo com opacidade */
+}
+
+/* Estilos do conteúdo do modal */
+.modal-content {
+    background-color: #fefefe; /* Cor de fundo do modal */
+    margin: 15% auto;            /* Centraliza o modal verticalmente */
+    padding: 20px;               /* Padding dentro do modal */
+    width: 80%;                  /* Largura do modal */
+    border-radius: 8px;          /* Bordas arredondadas */
+}
+
+/* Estilo do botão de fechar o modal */
+.close {
+    color: #aaa;     /* Cor do botão */
+    float: right;      /* Alinha o botão à direita */
+    font-size: 28px;   /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+}
+
+/* Estilo do botão de fechar ao passar o mouse */
+.close:hover,
+.close:focus {
+    color: black;        /* Muda a cor ao passar o mouse ou focar */
+    text-decoration: none; /* Remove decoração do texto */
+    cursor: pointer;       /* Muda o cursor ao passar o mouse */
+}
+
+/* Estilos do botão de alternar modo */
+#toggle-mode {
+    position: fixed; /* Fixa o botão na posição */
+    top: 10px; /* Distância do botão ao topo */
+    left: 10px; /* Distância do botão à esquerda */
+    padding: 7px;
+    background-color: #ddd; /* Cor de fundo do botão */
+    border-radius: 8px; /* Bordas arredondadas */
+    border: 1px solid #ddd; /* Borda do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+#toggle-mode i {
+    font-size: 20px;
+    z-index: 1;
+}
+
+/* Cores dos ícones */
+#toggle-mode .fa-sun {
+    color: #FFD700; /* Cor do sol */
+}
+
+#toggle-mode .fa-moon {
+    color: #1E90FF; /* Cor da lua */
+}
+
+/* Indicador do modo */
+.indicator {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: left 0.3s ease, background-color 0.3s ease; /* Transição suave */
+}

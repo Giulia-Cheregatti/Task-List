@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres utilizado -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta a viewport para melhorar a responsividade -->
+    <title>Task List</title> <!-- Título da página -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo de estilo CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <button id="toggle-mode">
+        <i class="fa-regular fa-sun"></i>
+        <i class="fa-solid fa-moon"></i>
+        <div class="indicator"></div>
+    </button> 
+
+    <div class="container"> <!-- Contêiner principal da aplicação -->
+        <h1 class="txt">Task List</h1>  <!-- Título da aplicação -->
+        <div class="add-task-section">                                                <!-- Seção para adicionar novas tarefas -->
+            <input type="text" id="taskInput" placeholder="Add a new task...">        <!-- Campo de entrada para o nome da tarefa -->
+            <input type="text" id="taskObservation" placeholder="Add observation..."> <!-- Campo de entrada para observações da tarefa -->
+            <button id="addTaskButton">Add Task</button>                              <!-- Botão para adicionar uma nova tarefa -->
+        </div>
+        <div class="lists-section">      <!-- Seção que contém as listas de tarefas -->
+            <div class="list-container"> <!-- Contêiner da lista de tarefas pendentes -->
+                <h2 class="txt">Tasks to do</h2>     <!-- Título da lista de tarefas pendentes -->
+                <ul id="taskList"></ul>  <!-- Lista onde as tarefas pendentes serão inseridas -->
+            </div>
+            <div class="list-container">         <!-- Contêiner da lista de tarefas concluídas -->
+                <h2 class="txt">Completed tasks</h2>         <!-- Título da lista de tarefas concluídas -->
+                <ul id="completedTaskList"></ul> <!-- Lista onde as tarefas concluídas serão inseridas -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para detalhes das tarefas -->
+    <div class="modal" id="taskModal">              <!-- Modal para exibir os detalhes de uma tarefa -->
+        <div class="modal-content center">          <!-- Conteúdo do modal, centralizado -->
+            <span class="close">&times;</span>      <!-- Botão para fechar o modal -->
+            <h2 class="txt">Task Details</h2><br>   <!-- Título do modal -->
+            <p id="taskDetails"></p><br>            <!-- Exibe os detalhes da tarefa -->
+            <p id="taskObservationDetails"></p><br> <!-- Exibe as observações da tarefa -->
+            <p id="taskCreationDate"></p><br>       <!-- Exibe a data de criação da tarefa -->
+            <p id="taskCompletionDate"></p><br>     <!-- Exibe a data de conclusão da tarefa, se aplicável -->
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
+</body>
+</html>
